@@ -1,1 +1,14 @@
 fuck 1942
+linkage:
+    complete
+    single
+    median(done)
+    average
+    mcquitty
+    ward
+
+polythetic
+
+apriori
+chi square
+classification(decision tree)
