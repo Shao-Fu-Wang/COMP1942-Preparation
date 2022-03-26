@@ -3,7 +3,6 @@ import math
 a = [[1, 2], [2, 2], [5, 2], [6, 1]]
 
 method = input("What linkage method: ")
-print("hi")
 
 for k in range(len(a)-1):
     print(end="\t\t")
