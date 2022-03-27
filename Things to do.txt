@@ -3,7 +3,7 @@ fuck 1942
 priority:
 linkage:
     complete(done)
-    centroid(done)
+    centroid
     single(done)
     median(done)
     average
@@ -14,5 +14,5 @@ linkage:
     mcquitty
     ward
 apriori
-chi square
-classification(decision tree)
+chi square(done)
+classification(decision tree)(done)
