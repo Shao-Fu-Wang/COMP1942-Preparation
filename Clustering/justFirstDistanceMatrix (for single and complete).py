@@ -2,7 +2,7 @@ import math
 
 a = [[1, 2], [2, 2], [5, 2], [6, 1]]
 
-for k in range(len(a)-1):
+for k in range(1):
     print(end="\t\t")
     for i in range(len(a)):
         print("cluster",i+1, end='\t')
@@ -38,10 +38,10 @@ for k in range(len(a)-1):
         if((i+1)%len(a) == 0):
             print()
 
-    print("merge cluster"+str(min_x+1), "and cluster"+str(min_y+1), "because distance is smallest:", min)
+    # print("merge cluster"+str(min_x+1), "and cluster"+str(min_y+1), "because distance is smallest:", min)
     a[min_smaller] = new_set_point
     a.pop(min_bigger)
     # print("min_smaller =",min_smaller)
     # print("min_bigger =",min_bigger)
     # print(new_set_point)
-    print("new cluster midpoint: "+str(new_set_point)+"\n")
+    # print("new cluster midpoint: "+str(new_set_point)+"\n")
