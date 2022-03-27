@@ -2,8 +2,9 @@ fuck 1942
 
 priority:
 linkage:
-    complete
-    single
+    complete(done)
+    centroid(done)
+    single(done)
     median(done)
     average
 polythetic
