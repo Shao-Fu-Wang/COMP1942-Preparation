@@ -2,8 +2,6 @@ import math
 
 a = [[1, 2], [2, 2], [5, 2], [6, 1]]
 
-method = input("What linkage method: ")
-
 for k in range(len(a)-1):
     print(end="\t\t")
     for i in range(len(a)):
