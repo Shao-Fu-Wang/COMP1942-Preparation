@@ -1,14 +1,17 @@
 fuck 1942
+
+priority:
 linkage:
     complete
     single
     median(done)
     average
-    mcquitty
-    ward
-
 polythetic
 
+not priority:
+linkage:
+    mcquitty
+    ward
 apriori
 chi square
 classification(decision tree)
