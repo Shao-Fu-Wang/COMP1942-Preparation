@@ -66,7 +66,7 @@ while True:
     cluster1.append(index)
     print(f"move {index+1} to cluster A.")
     print(f'A: {displayPoints(cluster1)}, B: {displayPoints(cluster2)}.')
-print(f'all delta < 0. end')
+print(f'end')
 print(f'final clusters: A: {displayPoints(cluster1)}, B: {displayPoints(cluster2)}.')
 [print() for _ in range(1)]
 

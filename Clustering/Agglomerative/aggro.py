@@ -4,7 +4,7 @@ import math
 
 SINGLE, COMPLETE, GROUPAVG, CENTROID, MEDIAN = 0, 1, 2, 3, 4
 pts = [(1,2), (2,2), (5,2), (6,1)]
-mode = SINGLE
+mode = MEDIAN
 
 # ---------------------------
 
@@ -31,6 +31,8 @@ class Cluster:
     @staticmethod
     def dist(clus1, clus2):
         pairwise_distances = [distance(pts[i], pts[j]) for i in clus1.pts_index for j in clus2.pts_index]
+        if clus1 == clus2:
+            return 0
         if mode == SINGLE:
             return min(pairwise_distances)
         elif mode == COMPLETE:
@@ -52,13 +54,13 @@ def aggro(clusters):
     return distance_matrix, min_dist, clus1_index, clus2_index
 
 def display_points(pts):
-    return str(list(map(lambda x: x+1, pts)))
+    return "".join(list(map(lambda x: str(x+1), pts)))
 
 def display_matrix(distance_matrix, clusters):
     cluster_labels = [display_points(clus.pts_index) for clus in clusters]
-    print(("{:>12}"*(len(clusters)+1)).format("", *cluster_labels))
+    print(("{:<9}"*(len(clusters)+1)).format("", *cluster_labels))
     for label, row in zip(cluster_labels, distance_matrix):
-        print(("{:>12}"+"{:>12.4f}"*len(clusters)).format(label, *row))
+        print(("{:<9}"+"{:<9.4f}"*len(clusters)).format(label, *row))
 
 def display_cluster(cluster):
     print(cluster.pts_index, cluster.centroid_mean, cluster.median_mean)

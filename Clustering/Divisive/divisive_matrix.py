@@ -51,7 +51,6 @@ def displayDistances(displayType, pts, distances):
     return format_string.format(*string_list)
 
 dists = [Linkage(i, cluster2) for i in cluster2]
-[print() for _ in range(2)]
 print(displayDistances('*', cluster2, dists))
 index = dists.index(max(dists))
 cluster2.remove(index)
@@ -59,7 +58,6 @@ cluster1.append(index)
 print(f"move {index+1}  to cluster A.")
 print(f'A: {displayPoints(cluster1)},     B: {displayPoints(cluster2)}.')
 while True:
-    [print() for _ in range(1)]
     dists2 = [Linkage(i, cluster2) for i in cluster2]
     dists1 = [Linkage(i, cluster1) for i in cluster2]
     dists = [dists2[i] - dists1[i] for i in range(len(cluster2))]
@@ -73,9 +71,8 @@ while True:
     cluster1.append(index)
     print(f"move {index+1} to cluster A.")
     print(f'A: {displayPoints(cluster1)}, B: {displayPoints(cluster2)}.')
-print(f'all delta < 0. end')
+print(f'end')
 print(f'final clusters: A: {displayPoints(cluster1)}, B: {displayPoints(cluster2)}.')
-[print() for _ in range(1)]
         
 ClusterSingleLinkage = lambda cluster1, cluster2: min([dist_matrix[j][i] for i in cluster1 for j in cluster2])
 ClusterCompleteLinkage = lambda cluster1, cluster2: max([dist_matrix[j][i] for i in cluster1 for j in cluster2])

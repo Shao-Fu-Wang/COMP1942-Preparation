@@ -57,13 +57,13 @@ def aggro(clusters):
     return distance_matrix, min_dist, clus1_index, clus2_index
 
 def display_points(pts):
-    return str(list(map(lambda x: x+1, pts)))
+    return "".join(list(map(lambda x: str(x+1), pts)))
 
 def display_matrix(distance_matrix, clusters):
     cluster_labels = [display_points(clus.pts_index) for clus in clusters]
-    print(("{:>18}"*(len(clusters)+1)).format("", *cluster_labels))
+    print(("{:<9}"*(len(clusters)+1)).format("", *cluster_labels))
     for label, row in zip(cluster_labels, distance_matrix):
-        print(("{:>18}"+"{:>18.2f}"*len(clusters)).format(label, *row))
+        print(("{:<9}"+"{:<9.2f}"*len(clusters)).format(label, *row))
 
 def display_cluster(cluster):
     print(cluster.pts_index)
@@ -82,8 +82,7 @@ for _ in range(pt_count):
         break
     display_matrix(distance_matrix, clusters)
     # [display_cluster(cluster) for cluster in clusters]
-    print(b_i+f'min dist is {min_dist:.2f} between clusters ' + \
-              f'{display_points(clusters[clus1_index].pts_index)} and {display_points(clusters[clus2_index].pts_index)}'+b_f)
+    print(f'min dist is {min_dist:.2f} between clusters ')
     new_clus = Cluster.merge(clusters[clus1_index], clusters[clus2_index])
     clusters = [new_clus] + [clusters[i] for i in range(len(clusters)) if i not in (clus1_index, clus2_index)]
     # display_cluster(new_clus)
