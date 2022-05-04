@@ -13,8 +13,9 @@ while(1):
     attrInfo = attrSplit*firstInfo + (1-attrSplit)*secondInfo
     splitInfo = attrSplit*-math.log2(attrSplit+err)-(1-attrSplit)*math.log2(1-attrSplit+err)
     ID3gain = totalInfo - attrInfo
-    C45gain = ID3gain/splitInfo
+    C45gain = ID3gain/(splitInfo+err)
     print()
+    print("totalInfo: ", totalInfo)
     print("firstInfo: ",  firstInfo)
     print("secondInfo: ", secondInfo)
     print("attrInfo: ", attrInfo)
