@@ -96,17 +96,16 @@ def pca(data):
     #     eigenvectors[i] = np.sort(eigenvectors[i])[::-1]
     # print("eigenvectors = \n{}".format(eigenvectors))
     print()
-    print(type(np.sort(eigenvectors[1])[::-1]))
     print()
 
     # rearrange eigenvectors
     print()
-    print(npmap(float, cov_matrix))
+    # print(npmap(float, cov_matrix))
     print()
     einvalues, einvectors = np.linalg.eig(npmap(float, cov_matrix))
     einvalues = npmap(lambda x: Fraction(x).limit_denominator(1000), einvalues)
     # einvalues = npmap(einvalues)
-    print("einvalues", einvalues)
+    # print("einvalues", einvalues)
     print("einvectors", einvectors)
 
     einvecs = []
@@ -119,12 +118,12 @@ def pca(data):
     einvec_sorted = [x for _, x in sorted(zip(list(einvalues), list(einvecs)))][::-1]
     einvec_sorted = [x.reshape(2, 1) for x in einvec_sorted]
     phi = np.concatenate(einvec_sorted, axis=1)
-    print("phi", phi)
+    # print("phi", phi)
 
     # phi = np.sort(eigenvectors, axis=0)
     # phi = eigenvectors[0]
     # print("lmao")
-    print(phi)
+    # print(phi)
     # for i in range(1, len(eigenvectors)):
     #     phi = np.column_stack((phi, eigenvectors[i]))
     # print()
@@ -191,9 +190,9 @@ def pca(data):
 
 
 # points = [[3, 3], [0, 2], [-1, -1], [2, 0]]
-points = [[2, 2], [4, 4], [1, 5], [5, 1]]
+# points = [[2, 2], [4, 4], [1, 5], [5, 1]]
 # points = [[5, 5], [2, 4], [1, 1], [4, 2]]
 # points = [[20, 16], [17, 17], [19, 19], [16, 20]]
 # points = [[12, 14], [16, 18], [10, 20], [16, 10]]
-# points = [[6, 7], [8, 9], [5, 10], [8, 5]]
+points = [[6, 7], [8, 9], [5, 10], [8, 5]]
 pca(points)
