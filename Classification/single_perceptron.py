@@ -103,11 +103,14 @@ class Perceptron:
                 print("FINAL BIAS: {}".format(self.bias))
 
 
-training_inputs = [[2, 0], [0, 2], [4, 2], [2, 4]]
-expected_outputs = [0, 0, 1, 1]
+training_inputs = [[2, 0], [0, 2], [4, 2], [2, 4], [2, 0]]
+expected_outputs = [0, 0, 1, 1, 0]
 weights = [0.3, 0.3]
 bias = 0.3
 learning_rate = 0.6
 
 test = Perceptron(weights, bias, learning_rate)
-test.train(training_inputs, expected_outputs, 0, ActivationFunctions.THRESHOLD)
+
+# 1 loop = run through ALL training inputs once
+# if you don't understand/don't care just keep the number = 1 and plug all the inputs into the variables above
+test.train(training_inputs, expected_outputs, 1, ActivationFunctions.THRESHOLD)
